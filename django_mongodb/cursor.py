@@ -65,7 +65,7 @@ class Cursor:
         raise NotSupportedError
 
     def execute(self, command, params=None):
-        logger.debug( command)
+        logger.debug(command)
         match command:
             case {"op": "aggregate"}:
                 self.result = self.connection[command["collection"]].aggregate(command["pipeline"])
